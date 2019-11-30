@@ -8,14 +8,14 @@
   <link rel="dns-prefetch" href="http://jackfrued.top">
   <title>mysql学习笔记 | 潘的日记账</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##2019&#x2F;11&#x2F;26select xxx from where exists(select * from table1.xx=table2.xx)#exists:存在 内连接select xxx from table1 inner join table2 on table1.xx=table2.xx 左连接  以left代替inner右连接  以right代替inner">
+  <meta name="description" content="##2019&#x2F;11&#x2F;26select xxx from where exists(select * from table1.xx=table2.xx)#exists:存在 内连接select xxx from table1 inner join table2 on table1.xx=table2.xx 左连接  以left代替inner右连接  以right代替inner unionselect">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql学习笔记">
 <meta property="og:url" content="http:&#x2F;&#x2F;jackfrued.top&#x2F;2019&#x2F;11&#x2F;26&#x2F;mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="潘的日记账">
-<meta property="og:description" content="##2019&#x2F;11&#x2F;26select xxx from where exists(select * from table1.xx=table2.xx)#exists:存在 内连接select xxx from table1 inner join table2 on table1.xx=table2.xx 左连接  以left代替inner右连接  以right代替inner">
+<meta property="og:description" content="##2019&#x2F;11&#x2F;26select xxx from where exists(select * from table1.xx=table2.xx)#exists:存在 内连接select xxx from table1 inner join table2 on table1.xx=table2.xx 左连接  以left代替inner右连接  以right代替inner unionselect">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-26T15:39:11.972Z">
+<meta property="og:updated_time" content="2019-11-30T17:08:01.140Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="潘的日记账" type="application/atom+xml">
@@ -179,6 +179,25 @@
         <p>##2019/11/26<br>select xxx from where exists(select * from table1.xx=table2.xx)<br>#exists:存在</p>
 <p>内连接<br>select xxx from table1 inner join table2 on table1.xx=table2.xx</p>
 <p>左连接  以left代替inner<br>右连接  以right代替inner</p>
+<p>union<br>select uid,name from user<br>union<br>select id,name from tmp;</p>
+<p>#union语句必须 取出的列数一致，列名称为必要一致，列名称会使用第一个表的列名称<br>注意：使用union时，完全相等的行将会被合并<br>合并是比较耗时的操作，一般不让union进行合并，使用 union all 可以避免合并</p>
+<p>数据库的创建<br>建表–声明表头<br>列 声明列<br>数据类型</p>
+<p>int：<br>tinyint<br>smallint<br>mediumint<br>int<br>bigint</p>
+<p>unsigned  无符号，列的值从0开始<br>zerofill M    填充至多宽 0填充<br>注意：zerofill属性默认决定列为unsigned</p>
+<p>35课 主键与自增<br>主键 primary key 此列不重复，能够区分每一行！</p>
+<p>37.改表 增删<br>alter table rag3 add height tinyint unsigned after weight;<br>alter table drop column 列名</p>
+<p>alter table reg3 change height shengao smallint;</p>
+<p>alter table reg3 modify height tinyint</p>
+<p>38课 试图<br>view 又被成为虚拟表，sql的查询结果<br>create view as vgoods select goods_id,goods_name from goods；</p>
+<p>39.<br>试图是一种函数映射<br>merge<br>algorithm=merge 合并不生成内存表<br>algorithm=temptable 生成内存表<br>不写以上，自动判断</p>
+<p>40.<br>show tables<br>desc table<br>查看建表过程show creat table XXX<br>查看建试图名show creat view XX</p>
+<p>drop table XXX<br>drop view XXX</p>
+<p>show tables status \g<br>show table status where name = ‘’ \g</p>
+<p>rename table goods to good</p>
+<p>41.引擎<br>innodb<br>myisam<br>memory<br>bdb<br>数据库优化</p>
+<p>42.字符集与乱码<br>character_set_client<br>character_set_connection<br>character_set_results</p>
+<p>set names gbk</p>
+<p>校对集</p>
 
       
 
