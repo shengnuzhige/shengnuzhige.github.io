@@ -197,6 +197,17 @@
 <p>42.字符集与乱码<br>character_set_client<br>character_set_connection<br>character_set_results</p>
 <p>set names gbk</p>
 <p>校对集</p>
+<p>43.索引<br>快速定位<br>key<br>unique key 唯一<br>primary key 主键索引<br>fulltext 全文索引 中文环境下，全文索引无效，要分词＋索引，一般用第三方解决方案，如sphinx</p>
+<p>索引长度：可以使用前边几位字符<br>如 key email(email(10))</p>
+<p>多列索引 key xm（xing ming）<br>单 名无法索引<br>explain … \G 分析<br>possible_keys</p>
+<p>冗余索引 key xm;key m(ming)</p>
+<p>44.索引操作<br>查<br>show index from table<br>show create tx<br>删<br>alter table t20 drop index m;<br>drop index xm on t20;<br>添加<br>alter table t20 add index xm(xing,ming);</p>
+<p>45.常用函数<br><a href="https://www.bilibili.com/video/av59808384?p=45" target="_blank" rel="noopener">https://www.bilibili.com/video/av59808384?p=45</a></p>
+<p>46.事务<br>如现实业务，转账<br>engine innodb</p>
+<p>隔离性<br>start transaction;<br>1<br>2<br>commit;完成<br>or<br>rollback;回滚</p>
+<p>原子性 回滚</p>
+<p>一致性</p>
+<p>持久性  一旦执行，无法回滚</p>
 
       
 
